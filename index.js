@@ -1,16 +1,5 @@
-const express = require("express");
-const app = express();
+const Server = require("./server");
+const port = 3000
 
-const port = 3000;
-
-app.get('/',(req,res)=>{
-    res.send("Home Page")
-})
-
-app.get('about',(req,res)=>{
-    res.send("About Page")
-})
-
-app.listen(port, (req, res) => {
-  console.log(`App is running at http://localhost:${port}`);
-});
+const app = new Server(port);
+app.start();
