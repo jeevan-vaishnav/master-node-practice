@@ -1,5 +1,5 @@
 const express = require("express");
-
+const Router = require("../router");
 class Server {
   constructor(port) {
     this.app = express();
@@ -10,13 +10,14 @@ class Server {
     this._setupRoutes();
     this._listen();
   }
-  _setupRoutes(){
-    this.app.get('/',(req,res)=>{
-        res.send("Home Page")
-    })
-    this.app.get('/about',(req,res)=>{
-        res.send('About Page')
-    })
+  _setupRoutes() {
+    Router.create();
+    // this.app.get("/", (req, res) => {
+    //   res.send("Home Page");
+    // });
+    // this.app.get("/about", (req, res) => {
+    //   res.send("About Page");
+    // });
   }
   /** This (-) symbol means only invoked the inside of the class not offside of the class */
   _listen() {
