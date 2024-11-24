@@ -4,6 +4,7 @@ class Server {
   constructor(port) {
     this.app = express();
     this.port = port;
+    this.router = Router;
   }
 
   start() {
@@ -11,7 +12,7 @@ class Server {
     this._listen();
   }
   _setupRoutes() {
-    Router.create(this.app);
+    this.router.create(this.app);
     // this.app.get("/", (req, res) => {
     //   res.send("Home Page");
     // });
