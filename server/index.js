@@ -11,7 +11,7 @@ class Server {
     this._listen();
   }
   _setupRoutes() {
-    Router.create();
+    Router.create(this.app);
     // this.app.get("/", (req, res) => {
     //   res.send("Home Page");
     // });
