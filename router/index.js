@@ -28,9 +28,6 @@ class Router {
   _attachRoutes(routeGroups,prefix = ''){
     routeGroups.forEach(({group,routes})=>{
         routes.forEach(({method,path,callback})=>{
-            // console.log(this.router[method])
-            // console.log(prefix + group.prefix + path)
-            // console.log(callback)
             this.router[method]( prefix + group.prefix + path,callback)
         })
     })
