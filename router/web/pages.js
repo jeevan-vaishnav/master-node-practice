@@ -1,3 +1,5 @@
+const PageController = require('../../app/controllers/web/page-controller')
+
 module.exports = {
   group: {
     prefix: "/pages",
@@ -6,30 +8,22 @@ module.exports = {
     {
       method: "get",
       path: "",
-      callback: (req, res) => {
-        res.send("HomePage");
-      },
+      callback: PageController.home
     },
     {
       method: "get",
       path: "/about",
-      callback: (req, res) => {
-        res.send("AboutPage");
-      },
+      callback:PageController.about
     },
     {
       method: "get",
       path: "/contact",
-      callback: (req, res) => {
-        res.send("ContactPage");
-      },
+      callback: PageController.contact
     },
     {
       method: "get",
       path: "/product",
-      callback: (req, res) => {
-        res.send("ProductPage");
-      },
+      callback:PageController.product
     },
   ],
 };
